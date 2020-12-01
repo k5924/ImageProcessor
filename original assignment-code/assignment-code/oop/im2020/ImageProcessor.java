@@ -125,14 +125,14 @@ public class ImageProcessor extends JFrame {
 //			//setImage(new ChromaKey(this.image, this, grayscaleUI));
 //		}
 		if (identifier.equals("Grayscale")) {
-			OperationChooser operation = OperationFactory.createOperationChanger(OperationType.Grayscale);
-			operation.GrayScaleOperation(this.image, this, this.grayscaleUI);
+			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Grayscale, this.image, this, this.grayscaleUI);
+			option.Operation();
 		} else if (identifier.equals("Tint")) {
-			OperationChooser operation = OperationFactory.createOperationChanger(OperationType.Tint);
-			operation.TintOperation(this.image, this, this.tintUI);
+			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Tint, this.image, this, this.tintUI);
+			option.Operation();
 		} else if (identifier.equals("Chromakey")) {
-			OperationChooser operation = OperationFactory.createOperationChanger(OperationType.Chromakey);
-			operation.ChromaKeyOperation(this.image, this, this.chromaKeyUI);
+			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Chromakey, this.image, this, this.chromaKeyUI);
+			option.Operation();
 		}
 	}
 
