@@ -36,7 +36,7 @@ public class ImageProcessor extends JFrame {
 	private final TintUI tintUI = new TintUI();
 	private final ChromaKeyUI chromaKeyUI = new ChromaKeyUI(chooser);
 
-	public ImageProcessor() {
+	public ImageProcessor(OperationType[] Types) {
 		this.chooser.setMultiSelectionEnabled(false);
 		this.chooser.setCurrentDirectory(new File(".")); // set current directory
 
@@ -60,9 +60,12 @@ public class ImageProcessor extends JFrame {
 		add(this.imagePanel, BorderLayout.CENTER);
 		pack();
 
-		addMenuOperation("Grayscale");
-		addMenuOperation("Tint");
-		addMenuOperation("Chromakey");
+		for (OperationType type: Types) {
+			addMenuOperation(type.toString());
+		}
+//		addMenuOperation("Grayscale");
+//		addMenuOperation("Tint");
+//		addMenuOperation("Chromakey");
 
 		this.setVisible(true);
 	}
@@ -126,18 +129,18 @@ public class ImageProcessor extends JFrame {
 //		}
 		if (identifier.equals("Grayscale")) {
 			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Grayscale, this.image, this, this.grayscaleUI);
-			option.Operation();
+			setImage(option.Operation());
 		} else if (identifier.equals("Tint")) {
 			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Tint, this.image, this, this.tintUI);
-			option.Operation();
+			setImage(option.Operation());
 		} else if (identifier.equals("Chromakey")) {
 			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Chromakey, this.image, this, this.chromaKeyUI);
-			option.Operation();
+			setImage(option.Operation());
 		}
 	}
 
 	public static void main(final String[] args) {
-		SwingUtilities.invokeLater(() -> new ImageProcessor());
+		SwingUtilities.invokeLater(() -> new ImageProcessor(OperationType.values()));
 	}
 
 }

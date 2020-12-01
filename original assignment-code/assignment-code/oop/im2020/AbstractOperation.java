@@ -12,5 +12,4 @@ public abstract class AbstractOperation implements OperationChooser{
 		this.inputImage = inputImage;
 		this.frame = frame;
 	}
-	
 }
