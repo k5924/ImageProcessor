@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
@@ -60,12 +61,9 @@ public class ImageProcessor extends JFrame {
 		add(this.imagePanel, BorderLayout.CENTER);
 		pack();
 
-		for (OperationType type: Types) {
+		for (OperationType type : Types) {
 			addMenuOperation(type.toString());
 		}
-//		addMenuOperation("Grayscale");
-//		addMenuOperation("Tint");
-//		addMenuOperation("Chromakey");
 
 		this.setVisible(true);
 	}
@@ -114,29 +112,17 @@ public class ImageProcessor extends JFrame {
 	}
 
 	private void doOperation(final String identifier) {
-//		if (identifier.equals("Grayscale")) {
-//			Grayscale type = new Grayscale(this.image, this, this.grayscaleUI);
-//			setImage(type.confirm(this.image));
-//			//setImage((BufferedImage) new Grayscale(this.image, this, grayscaleUI));
-//		} else if (identifier.equals("Tint")) {
-//			Tint type = new Tint(this.image, this, this.tintUI);
-//			setImage(type.confirm(this.image));
-//			//setImage(new Tint(this.image, this, grayscaleUI));
-//		} else if (identifier.equals("Chromakey")) {
-//			ChromaKey type = new ChromaKey(this.image, this, this.chromaKeyUI);
-//			setImage(type.confirm(this.image));
-//			//setImage(new ChromaKey(this.image, this, grayscaleUI));
-//		}
+		JPanel ui = new JPanel();
 		if (identifier.equals("Grayscale")) {
-			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Grayscale, this.image, this, this.grayscaleUI);
-			setImage(option.Operation());
+			ui = this.grayscaleUI;
 		} else if (identifier.equals("Tint")) {
-			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Tint, this.image, this, this.tintUI);
-			setImage(option.Operation());
+			ui = this.tintUI;
 		} else if (identifier.equals("Chromakey")) {
-			OperationChooser option = OperationFactory.createOperationChanger(OperationType.Chromakey, this.image, this, this.chromaKeyUI);
-			setImage(option.Operation());
+			ui = this.chromaKeyUI;
 		}
+		OperationType type = OperationType.valueOf(identifier);
+		OperationChooser option = OperationFactory.createOperationChanger(type, this.image, this, ui);
+		setImage(option.Operation());
 	}
 
 	public static void main(final String[] args) {
