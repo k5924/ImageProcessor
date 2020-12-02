@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 public class OperationFactory {
 
 	public enum OperationType {
-		Grayscale, Tint, Chromakey
+		Grayscale, Tint, Chromakey, Negative
 	}
 	
 	public static OperationChooser createOperationChanger(OperationType type, BufferedImage inputImage, ImageProcessor frame) {
@@ -19,6 +19,8 @@ public class OperationFactory {
 			return new Tint(inputImage, frame, new TintUI());
 		case Chromakey:
 			return new ChromaKey(inputImage, frame, new ChromaKeyUI(new JFileChooser()));
+		case Negative:
+			return new Negative(inputImage, frame, new NegativeUI());
 		}
 		return null;
 	}
