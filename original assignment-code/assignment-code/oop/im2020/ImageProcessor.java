@@ -112,16 +112,8 @@ public class ImageProcessor extends JFrame {
 	}
 
 	private void doOperation(final String identifier) {
-		JPanel ui = new JPanel();
-		if (identifier.equals("Grayscale")) {
-			ui = this.grayscaleUI;
-		} else if (identifier.equals("Tint")) {
-			ui = this.tintUI;
-		} else if (identifier.equals("Chromakey")) {
-			ui = this.chromaKeyUI;
-		}
 		OperationType type = OperationType.valueOf(identifier);
-		OperationChooser option = OperationFactory.createOperationChanger(type, this.image, this, ui);
+		OperationChooser option = OperationFactory.createOperationChanger(type, this.image, this);
 		setImage(option.Operation());
 	}
 
