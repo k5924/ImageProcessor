@@ -21,10 +21,10 @@ public class ChromaKey extends AbstractOperation {
 		dialog.setVisible(true);
 		if (!dialog.wasCancelled()) {
 			try {
-				double sensitivity = ui.getSensitivity();
+				double sensitivity = this.ui.getSensitivity();
 				BufferedImage otherImage = ImageIO.read(this.ui.getOtherImagePath());
 
-				int targetRGB = ui.getTargetColor().getRGB();
+				int targetRGB = this.ui.getTargetColor().getRGB();
 
 				BufferedImage output = new BufferedImage(inputImage.getWidth(), inputImage.getHeight(),
 						inputImage.getType());
