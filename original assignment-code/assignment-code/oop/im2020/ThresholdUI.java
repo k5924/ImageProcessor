@@ -12,10 +12,8 @@ public class ThresholdUI extends JPanel {
 
     public ThresholdUI() {
         super(new BorderLayout());
-        
-        JLabel label = new JLabel("Convert image to black and white with threshold value");
 
-        add(label, BorderLayout.CENTER);
+        add(new JLabel("Convert image to black and white with threshold value"), BorderLayout.CENTER);
         add(this.alphaSlider, BorderLayout.SOUTH);
     }
 
