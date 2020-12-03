@@ -5,19 +5,19 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFileChooser;
 
 public class OperationFactory {
-
+	
 	public enum OperationType {
 		Grayscale, Tint, Chromakey, Negative, Blend, Threshold
 	}
 	
-	public static OperationChooser createOperationChanger(OperationType type, BufferedImage inputImage, ImageProcessor frame, JFileChooser chooser) {
+	public static OperationChooser createOperationChanger(OperationType type, BufferedImage inputImage, ImageProcessor frame, GrayscaleUI grayscaleUI, ChromaKeyUI chromaKeyUI, TintUI tintUI, JFileChooser chooser) {
 		switch (type) {
 		case Grayscale:
-			return new Grayscale(inputImage, frame, new GrayscaleUI());
+			return new Grayscale(inputImage, frame, grayscaleUI);
 		case Tint:
-			return new Tint(inputImage, frame, new TintUI());
+			return new Tint(inputImage, frame, tintUI);
 		case Chromakey:
-			return new ChromaKey(inputImage, frame, new ChromaKeyUI(chooser));
+			return new ChromaKey(inputImage, frame, chromaKeyUI);
 		case Negative:
 			return new Negative(inputImage, frame, new NegativeUI());
 		case Blend:

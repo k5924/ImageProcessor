@@ -113,7 +113,7 @@ public class ImageProcessor extends JFrame {
 
 	private void doOperation(final String identifier) {
 		OperationType type = OperationType.valueOf(identifier);
-		OperationChooser option = OperationFactory.createOperationChanger(type, this.image, this, this.chooser);
+		OperationChooser option = OperationFactory.createOperationChanger(type, this.image, this, this.grayscaleUI, this.chromaKeyUI, this.tintUI, this.chooser);
 		setImage(option.Operation());
 	}
 
