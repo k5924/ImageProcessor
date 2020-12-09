@@ -2,7 +2,7 @@ package oop.im2020;
 
 import java.awt.image.BufferedImage;
 
-public abstract class AbstractOperation implements OperationChooser {
+public abstract class AbstractOperation{
 
 	protected final BufferedImage inputImage;
 	protected ImageProcessor frame;
@@ -12,4 +12,6 @@ public abstract class AbstractOperation implements OperationChooser {
 		this.inputImage = inputImage;
 		this.frame = frame;
 	}
+	
+	public abstract BufferedImage Operation();
 }
