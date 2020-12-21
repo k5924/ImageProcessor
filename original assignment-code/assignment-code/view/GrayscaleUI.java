@@ -14,8 +14,8 @@ import javax.swing.JPanel;
  */
 public class GrayscaleUI extends JPanel {
 
-    public GrayscaleUI() {
-        add(new JLabel("Change image to gray scale"));
-    }
+	public GrayscaleUI() {
+		add(new JLabel("Change image to gray scale"));
+	}
 
 }

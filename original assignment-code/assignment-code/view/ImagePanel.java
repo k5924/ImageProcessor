@@ -17,16 +17,16 @@ import javax.swing.JComponent;
  */
 public class ImagePanel extends JComponent {
 
-    private BufferedImage image;
+	private BufferedImage image;
 
-    public void setImage(final BufferedImage image) {
-        this.image = image;
-        setPreferredSize(new Dimension(this.image.getWidth(), this.image.getHeight()));
-        repaint();
-    }
+	public void setImage(final BufferedImage image) {
+		this.image = image;
+		setPreferredSize(new Dimension(this.image.getWidth(), this.image.getHeight()));
+		repaint();
+	}
 
-    @Override
-    public void paintComponent(final Graphics g) {
-        g.drawImage(this.image, 0, 0, this);
-    }
+	@Override
+	public void paintComponent(final Graphics g) {
+		g.drawImage(this.image, 0, 0, this);
+	}
 }

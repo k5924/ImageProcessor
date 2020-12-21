@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 import view.ImageProcessor;
 
-public abstract class AbstractOperation{
+public abstract class AbstractOperation {
 
 	protected final BufferedImage inputImage;
 	protected ImageProcessor frame;
@@ -14,6 +14,6 @@ public abstract class AbstractOperation{
 		this.inputImage = inputImage;
 		this.frame = frame;
 	}
-	
+
 	public abstract BufferedImage Operation();
 }

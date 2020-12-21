@@ -10,5 +10,5 @@ package model;
  * @author childm
  */
 public enum ColourComponent {
-    RED, GREEN, BLUE
+	RED, GREEN, BLUE
 }

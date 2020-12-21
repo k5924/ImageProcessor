@@ -12,7 +12,7 @@ import view.OperationDialog;
 public class Blend extends AbstractOperation {
 
 	private BlendUI ui;
-	
+
 	public Blend(BufferedImage inputImage, ImageProcessor frame, BlendUI ui) {
 		super(inputImage, frame);
 		// TODO Auto-generated constructor stub

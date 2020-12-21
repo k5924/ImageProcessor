@@ -20,12 +20,14 @@ import view.ThresholdUI;
 import view.TintUI;
 
 public class OperationFactory {
-	
+
 	public enum OperationType {
 		Grayscale, Tint, Chromakey, Negative, Blend, Threshold
 	}
-	
-	public static AbstractOperation createOperationChanger(OperationType type, BufferedImage inputImage, ImageProcessor frame, GrayscaleUI grayscaleUI, ChromaKeyUI chromaKeyUI, TintUI tintUI, JFileChooser chooser) {
+
+	public static AbstractOperation createOperationChanger(OperationType type, BufferedImage inputImage,
+			ImageProcessor frame, GrayscaleUI grayscaleUI, ChromaKeyUI chromaKeyUI, TintUI tintUI,
+			JFileChooser chooser) {
 		switch (type) {
 		case Grayscale:
 			return new Grayscale(inputImage, frame, grayscaleUI);

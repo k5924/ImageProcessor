@@ -7,7 +7,7 @@ import view.NegativeUI;
 import view.OperationDialog;
 
 public class Negative extends AbstractOperation {
-	
+
 	private NegativeUI ui;
 
 	public Negative(BufferedImage inputImage, ImageProcessor frame, NegativeUI ui) {
