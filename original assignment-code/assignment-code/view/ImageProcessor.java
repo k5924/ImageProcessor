@@ -15,8 +15,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 import controller.OperationFactory;
-import controller.OperationFactory.OperationType;
 import model.AbstractOperation;
+import model.OperationType;
 
 /**
  *

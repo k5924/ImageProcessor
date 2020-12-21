@@ -9,6 +9,7 @@ import model.Blend;
 import model.ChromaKey;
 import model.Grayscale;
 import model.Negative;
+import model.OperationType;
 import model.Threshold;
 import model.Tint;
 import view.BlendUI;
@@ -20,10 +21,6 @@ import view.ThresholdUI;
 import view.TintUI;
 
 public class OperationFactory {
-
-	public enum OperationType {
-		Grayscale, Tint, Chromakey, Negative, Blend, Threshold
-	}
 
 	public static AbstractOperation createOperationChanger(OperationType type, BufferedImage inputImage,
 			ImageProcessor frame, GrayscaleUI grayscaleUI, ChromaKeyUI chromaKeyUI, TintUI tintUI,
