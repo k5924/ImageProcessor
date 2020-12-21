@@ -1,4 +1,4 @@
-package oop.im2020;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.image.BufferedImage;
@@ -11,11 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-import oop.im2020.OperationFactory.OperationType;
+import controller.OperationFactory;
+import controller.OperationFactory.OperationType;
+import model.AbstractOperation;
 
 /**
  *

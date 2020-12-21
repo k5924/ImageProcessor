@@ -1,4 +1,4 @@
-package oop.im2020;
+package view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;

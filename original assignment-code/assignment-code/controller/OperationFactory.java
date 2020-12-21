@@ -1,8 +1,23 @@
-package oop.im2020;
+package controller;
 
 import java.awt.image.BufferedImage;
 
 import javax.swing.JFileChooser;
+
+import model.AbstractOperation;
+import model.Blend;
+import model.ChromaKey;
+import model.Grayscale;
+import model.Negative;
+import model.Threshold;
+import model.Tint;
+import view.BlendUI;
+import view.ChromaKeyUI;
+import view.GrayscaleUI;
+import view.ImageProcessor;
+import view.NegativeUI;
+import view.ThresholdUI;
+import view.TintUI;
 
 public class OperationFactory {
 	

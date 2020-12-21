@@ -1,12 +1,16 @@
-package oop.im2020;
+package model;
 
 import java.awt.image.BufferedImage;
 
-public class Negative extends AbstractOperation {
-	
-	private NegativeUI ui;
+import view.GrayscaleUI;
+import view.ImageProcessor;
+import view.OperationDialog;
 
-	public Negative(BufferedImage inputImage, ImageProcessor frame, NegativeUI ui) {
+public class Grayscale extends AbstractOperation {
+
+	private GrayscaleUI ui;
+
+	public Grayscale(BufferedImage inputImage, ImageProcessor frame, GrayscaleUI ui) {
 		super(inputImage, frame);
 		// TODO Auto-generated constructor stub
 		this.ui = ui;
@@ -20,7 +24,7 @@ public class Negative extends AbstractOperation {
 			for (int x = 0; x < inputImage.getWidth(); x++) {
 				for (int y = 0; y < inputImage.getHeight(); y++) {
 					final int inputRGB = OperationUtilities.getRGB(x, y, inputImage);
-					final int outputRGB = OperationUtilities.negative(inputRGB);
+					final int outputRGB = OperationUtilities.grayscale(inputRGB);
 					OperationUtilities.setRGB(x, y, outputRGB, inputImage);
 				}
 			}

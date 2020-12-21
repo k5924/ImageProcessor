@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package oop.im2020;
+package view;
 
 import java.awt.Dimension;
 import java.awt.Graphics;

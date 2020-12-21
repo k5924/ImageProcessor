@@ -1,15 +1,19 @@
-package oop.im2020;
+package model;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Blend extends AbstractOperation {
+import view.ChromaKeyUI;
+import view.ImageProcessor;
+import view.OperationDialog;
 
-	private BlendUI ui;
-	
-	public Blend(BufferedImage inputImage, ImageProcessor frame, BlendUI ui) {
+public class ChromaKey extends AbstractOperation {
+
+	private ChromaKeyUI ui;
+
+	public ChromaKey(BufferedImage inputImage, ImageProcessor frame, ChromaKeyUI ui) {
 		super(inputImage, frame);
 		// TODO Auto-generated constructor stub
 		this.ui = ui;
@@ -21,6 +25,7 @@ public class Blend extends AbstractOperation {
 		dialog.setVisible(true);
 		if (!dialog.wasCancelled()) {
 			try {
+				double sensitivity = this.ui.getSensitivity();
 				BufferedImage otherImage = ImageIO.read(this.ui.getOtherImagePath());
 
 				int targetRGB = this.ui.getTargetColor().getRGB();
@@ -31,7 +36,7 @@ public class Blend extends AbstractOperation {
 					for (int y = 0; y < output.getHeight(); y++) {
 						int inputRGB = OperationUtilities.getRGB(x, y, inputImage);
 						int otherRGB = OperationUtilities.getRGB(x, y, otherImage);
-						int outputRGB = OperationUtilities.blend(inputRGB, otherRGB, targetRGB);
+						int outputRGB = OperationUtilities.chromaKey(inputRGB, otherRGB, targetRGB, sensitivity);
 						OperationUtilities.setRGB(x, y, outputRGB, output);
 					}
 				}

@@ -1,6 +1,8 @@
-package oop.im2020;
+package model;
 
 import java.awt.image.BufferedImage;
+
+import view.ImageProcessor;
 
 public abstract class AbstractOperation{
 

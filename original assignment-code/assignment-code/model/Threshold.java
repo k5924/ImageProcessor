@@ -1,6 +1,10 @@
-package oop.im2020;
+package model;
 
 import java.awt.image.BufferedImage;
+
+import view.ImageProcessor;
+import view.OperationDialog;
+import view.ThresholdUI;
 
 public class Threshold extends AbstractOperation {
 
