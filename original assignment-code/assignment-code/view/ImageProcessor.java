@@ -34,10 +34,6 @@ public class ImageProcessor extends JFrame {
 
 	private final JMenu opMenu = new JMenu("Operations");
 
-	private final GrayscaleUI grayscaleUI = new GrayscaleUI();
-	private final TintUI tintUI = new TintUI();
-	private final ChromaKeyUI chromaKeyUI = new ChromaKeyUI(chooser);
-
 	public ImageProcessor(OperationType[] Types) {
 		this.chooser.setMultiSelectionEnabled(false);
 		this.chooser.setCurrentDirectory(new File(".")); // set current directory
@@ -114,8 +110,7 @@ public class ImageProcessor extends JFrame {
 
 	private void doOperation(final String identifier) {
 		OperationType type = OperationType.valueOf(identifier);
-		AbstractOperation option = OperationFactory.createOperationChanger(type, this.image, this, this.grayscaleUI,
-				this.chromaKeyUI, this.tintUI, this.chooser);
+		AbstractOperation option = OperationFactory.createOperationChanger(type, this.image, this);
 		setImage(option.Operation());
 	}
 

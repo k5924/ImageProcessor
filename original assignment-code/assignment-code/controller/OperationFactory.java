@@ -22,9 +22,17 @@ import view.TintUI;
 
 public class OperationFactory {
 
+	private final static JFileChooser chooser = new JFileChooser();
+
+	private final static GrayscaleUI grayscaleUI = new GrayscaleUI();
+	private final static TintUI tintUI = new TintUI();
+	private final static ChromaKeyUI chromaKeyUI = new ChromaKeyUI(chooser);
+	private final static NegativeUI negativeUI = new NegativeUI();
+	private final static BlendUI blendUI = new BlendUI(chooser);
+	private final static ThresholdUI thresholdUI = new ThresholdUI();
+
 	public static AbstractOperation createOperationChanger(OperationType type, BufferedImage inputImage,
-			ImageProcessor frame, GrayscaleUI grayscaleUI, ChromaKeyUI chromaKeyUI, TintUI tintUI,
-			JFileChooser chooser) {
+			ImageProcessor frame) {
 		switch (type) {
 		case Grayscale:
 			return new Grayscale(inputImage, frame, grayscaleUI);
@@ -33,11 +41,11 @@ public class OperationFactory {
 		case Chromakey:
 			return new ChromaKey(inputImage, frame, chromaKeyUI);
 		case Negative:
-			return new Negative(inputImage, frame, new NegativeUI());
+			return new Negative(inputImage, frame, negativeUI);
 		case Blend:
-			return new Blend(inputImage, frame, new BlendUI(chooser));
+			return new Blend(inputImage, frame, blendUI);
 		case Threshold:
-			return new Threshold(inputImage, frame, new ThresholdUI());
+			return new Threshold(inputImage, frame, thresholdUI);
 		}
 		return null;
 	}
