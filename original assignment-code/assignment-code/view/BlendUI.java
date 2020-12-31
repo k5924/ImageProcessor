@@ -28,7 +28,7 @@ public class BlendUI extends JPanel {
 		pathPanel.add(this.otherImagePath);
 		pathPanel.add(this.fileChooserButton);
 		pathPanel.setBorder(BorderFactory.createTitledBorder("Image to blend"));
-		alphaSlider.setBorder(BorderFactory.createTitledBorder("How close to match the colour to blend through"));
+		alphaSlider.setBorder(BorderFactory.createTitledBorder("How close to blend the images through"));
 
 		add(pathPanel, BorderLayout.NORTH);
 		add(this.alphaSlider, BorderLayout.SOUTH);
