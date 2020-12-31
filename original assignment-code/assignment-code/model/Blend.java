@@ -26,8 +26,7 @@ public class Blend extends AbstractOperation {
 		if (!dialog.wasCancelled()) {
 			try {
 				BufferedImage otherImage = ImageIO.read(this.ui.getOtherImagePath());
-
-				int targetRGB = this.ui.getTargetColor().getRGB();
+				double sensitivity = this.ui.getSensitivity();
 
 				BufferedImage output = new BufferedImage(inputImage.getWidth(), inputImage.getHeight(),
 						inputImage.getType());
@@ -35,7 +34,7 @@ public class Blend extends AbstractOperation {
 					for (int y = 0; y < output.getHeight(); y++) {
 						int inputRGB = OperationUtilities.getRGB(x, y, inputImage);
 						int otherRGB = OperationUtilities.getRGB(x, y, otherImage);
-						int outputRGB = OperationUtilities.blend(inputRGB, otherRGB, targetRGB);
+						int outputRGB = OperationUtilities.blend(inputRGB, otherRGB, sensitivity);
 						OperationUtilities.setRGB(x, y, outputRGB, output);
 					}
 				}

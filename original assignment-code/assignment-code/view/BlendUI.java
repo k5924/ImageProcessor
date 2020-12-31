@@ -1,21 +1,20 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.io.File;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JTextField;
 
 public class BlendUI extends JPanel {
 
 	private final JTextField otherImagePath = new JTextField(60);
 	private final JButton fileChooserButton = new JButton("Open");
-	private final JColorChooser colorChooser = new JColorChooser();
+	private final JSlider alphaSlider = new JSlider(0, 100);
 
 	private final JFileChooser chooser;
 	private File file;
@@ -25,16 +24,14 @@ public class BlendUI extends JPanel {
 
 		this.chooser = chooser;
 
-		this.colorChooser.setPreviewPanel(new JPanel());
-
 		final JPanel pathPanel = new JPanel();
 		pathPanel.add(this.otherImagePath);
 		pathPanel.add(this.fileChooserButton);
 		pathPanel.setBorder(BorderFactory.createTitledBorder("Image to blend"));
-		colorChooser.setBorder(BorderFactory.createTitledBorder("Colour to blend through"));
+		alphaSlider.setBorder(BorderFactory.createTitledBorder("How close to match the colour to blend through"));
 
 		add(pathPanel, BorderLayout.NORTH);
-		add(this.colorChooser, BorderLayout.CENTER);
+		add(this.alphaSlider, BorderLayout.SOUTH);
 
 		this.otherImagePath.setEditable(false);
 
@@ -52,7 +49,7 @@ public class BlendUI extends JPanel {
 		return this.file;
 	}
 
-	public Color getTargetColor() {
-		return this.colorChooser.getColor();
+	public double getSensitivity() {
+		return this.alphaSlider.getValue() / 100.0;
 	}
 }
