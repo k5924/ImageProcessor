@@ -12,5 +12,15 @@
 <li> Pass a factory class instance to the ImageProcessor constructor to populate the menu items under operations </li>
 </ul>
 
-<h3 align="left">Languages and Tools:</h3>
+## Extended task
+
+> Implement the following operations with their interfaces then add them to the factory so that a user can set them in the application
+<ul>
+<li>Negative: inverts the colours in the image</li>
+<li>Threshold: converts an image to strict black and white only when provided with a threshold value</li>
+<li>Blend: blend two images together mixing them with an alpha value</li>
+</ul>
+
+## Languages and Tools:
+>
 <p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/java/java-original-wordmark.svg" alt="java" width="40" height="40"/> </a> </p>
