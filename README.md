@@ -20,7 +20,3 @@
 <li>Threshold: converts an image to strict black and white only when provided with a threshold value</li>
 <li>Blend: blend two images together mixing them with an alpha value</li>
 </ul>
-
-## Languages and Tools:
->
-<p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/java/java-original-wordmark.svg" alt="java" width="40" height="40"/> </a> </p>
